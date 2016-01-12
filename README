@@ -1,0 +1,17 @@
+This program solves possible ways to check out a given score when playing a
+game of darts in the typical 301, 501 or other typical variants, using the
+traditional requirement that the last dart must land in a double-value
+dartboard segment or in the bullseye.
+
+For more information, see the following Wikipedia entry:
+
+https://en.wikipedia.org/wiki/Darts
+
+It's implemented in C++. Building the program requires a compiler for C++11 (or
+a later version) and GNU Make. Other make tools may also work and the program
+can also be built by hand or using an IDE.
+
+The compiled program prints usage instructions when called without arguments.
+
+The code is released to the public domain under the terms of the CC0 license.
+Please see the COPYING file for more details.
