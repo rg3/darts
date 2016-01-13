@@ -13,7 +13,6 @@
  */
 #include <iostream>
 #include <sstream>
-#include <vector>
 
 #include "segment.h"
 #include "score_solver.h"
@@ -22,7 +21,6 @@ using std::cerr;
 using std::cout;
 using std::endl;
 using std::stringstream;
-using std::vector;
 
 int main(int argc, char *argv[])
 {
