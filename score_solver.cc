@@ -13,6 +13,7 @@
  */
 #include <algorithm>
 #include <cmath>
+#include <iterator>
 #include <map>
 #include <sstream>
 #include <string>
@@ -20,6 +21,7 @@
 #include "score_solver.h"
 #include "segment.h"
 
+using std::back_inserter;
 using std::map;
 using std::pow;
 using std::reverse;
