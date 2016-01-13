@@ -266,9 +266,7 @@ ScoreSolver::solve_using(int score, int darts,
 
         // Exact match.
         if (i == score)
-        {
             all_solutions.emplace_back(partial.combine(i));
-        }
 
         // Try one segment with a recursive call.
         partial.push(i);
