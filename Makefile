@@ -1,14 +1,20 @@
+CXXFLAGS ?= -std=c++11 -Wall -O2 -g
+
+program = darts
+sources = $(wildcard *.cc)
+objects = $(sources:%.cc=%.o)
+depends = $(sources:%.cc=%.d)
+
+%.d: %.cc
+	@$(CPP) $(CPPFLAGS) -c -MP -MM -MT "$@ $*.o" $< >$@
+
+$(program): $(objects)
+	$(CXX) -o $@ $^ $(LDFLAGS) $(LDLIBS)
+
 .PHONY: clean
-
-CC = $(CXX)
-
-darts: darts.o score_solver.o segment.o
-
-darts.o: darts.cc segment.h score_solver.h
-
-score_solver.o: score_solver.cc score_solver.h segment.h
-
-segment.o: segment.cc segment.h
-
 clean:
-	rm -f darts *.o
+	rm -f $(program) $(objects) $(depends)
+
+ifneq ($(MAKECMDGOALS),clean)
+-include $(depends)
+endif
